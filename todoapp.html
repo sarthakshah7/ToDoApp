@@ -1,0 +1,21 @@
+9423260913
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../../angular.min.js"></script>
+		<script src="todo.js"></script>
+	</head>
+	<body ng-app="application">
+		<div ng-controller="con1 as todoList">
+		<form ng-submit="todoList.addTodo()">
+			<input type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here">
+			<input class="btn-primary" type="submit" value="add">
+		</form>
+		<table>
+			<tr ng-repeat="todo in todoList.todos">
+				<td>{{todo.task}}</td>
+				<td><input type="checkbox" ng-model="todo.done"></input></td>
+			</tr>
+		</table>
+	</body>
+</html>
